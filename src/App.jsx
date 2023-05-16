@@ -7,6 +7,8 @@ export const App = () => {
   return (
     <div
       style={{
+        display: 'flex',
+        flexDirection: 'column',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -24,7 +26,8 @@ export const App = () => {
         views={user.stats.views}
         likes={user.stats.likes}
       />
-        <Statistics title="Upload stats" data={data} />
+      <Statistics title="Upload stats" data={data} />
+      <Statistics data={data} />
     </div>
   );
 };

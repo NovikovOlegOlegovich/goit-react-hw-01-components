@@ -4,7 +4,7 @@ import StatisticItem from '../StatisticItem/StatisticItem';
 
 export default function StatisticList({ data }) {
   return (
-    <ul className={css.statLlist}>
+    <ul className={css.statList}>
       {data.map(elem => (
         <StatisticItem key={elem.id} info={elem} />
       ))}

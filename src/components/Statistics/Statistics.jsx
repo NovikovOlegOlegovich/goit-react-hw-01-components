@@ -5,7 +5,7 @@ import StatisticList from './StatisticsList/StatisticList';
 
 export default function Statistics({ title, data }) {
   return (
-    <section className="statistics">
+    <section className={css.statistics}>
       <StatisticTitle title={title} />
       <StatisticList data={data} />
     </section>
