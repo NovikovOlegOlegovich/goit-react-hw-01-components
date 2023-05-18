@@ -1,33 +1,44 @@
 import PropTypes from 'prop-types';
-import css from './Statistics.module.css';
 import getRandomHexColor from '../../helpers/getRandomHexColor';
 
+import {
+  StatisticsSection,
+  StatisticsTitle,
+  StatisticsList,
+  StatisticsItem,
+  StatisticsItemLabel,
+  StatisticsItemPercentage,
+} from './Statistics.styled';
+
 export default function Statistics({ title, data }) {
-
   return (
-    <section className={css.statistics}>
-      {title && <h2 className={css.title}>{title}</h2>}
+    <StatisticsSection>
+      {title && <StatisticsTitle>{title}</StatisticsTitle>}
 
-      <ul className={css.statList}>
+      <StatisticsList>
         {data.map(elem => (
-          
-          <li
-            style={{
-              backgroundColor: `${getRandomHexColor()}`,
-            }}
-            className={css.item}
+          <StatisticsItem
+            key={elem.id}
+            style={{ backgroundColor: getRandomHexColor() }}
           >
-            <span className={css.label}>{elem.label}</span>
-            <span className={css.percentage}>{elem.percentage}%</span>
-          </li>
+            <StatisticsItemLabel>{elem.label}</StatisticsItemLabel>
+            <StatisticsItemPercentage>
+              {elem.percentage}%
+            </StatisticsItemPercentage>
+          </StatisticsItem>
         ))}
-      </ul>
-    </section>
+      </StatisticsList>
+    </StatisticsSection>
   );
 }
 
 Statistics.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
   title: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
 };

@@ -1,4 +1,6 @@
-.profile {
+import styled from '@emotion/styled';
+
+export const ProfileCard = styled.div`
   padding-top: 20px;
   width: 500px;
   background-color: rgb(251, 251, 251);
@@ -7,47 +9,50 @@
   border-radius: 10px;
   margin-top: 40px;
   margin-bottom: 40px;
-}
+`;
 
-/* .description {
-} */
+export const ProfileDescription = styled.div``;
 
-.avatar {
+export const ProfileAvatar = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
   width: 200px;
   background-color: yellow;
-}
-.name {
+`;
+
+export const ProfileName = styled.p`
   text-align: center;
   color: rgb(1, 1, 1);
   font-weight: 700;
   margin-bottom: 20px;
-}
-.tag {
+`;
+
+export const ProfileTag = styled.p`
   text-align: center;
   font-size: 34px;
   margin: 0px 0px 20px 0px;
   color: rgb(99, 105, 105);
   font-weight: 500;
-}
-.location {
+`;
+
+export const ProfileLocation = styled.p`
   font-size: 34px;
   text-align: center;
   color: rgb(99, 105, 105);
   margin: 0px 0px 70px 0px;
   font-weight: 500;
-}
-.stats {
+`;
+
+export const ProfileStatsList = styled.ul`
   display: flex;
   list-style: none;
   padding: 0px;
   margin: 0px;
-}
+`;
 
-.item {
+export const ProfileStatsItem = styled.li`
   width: calc((100%-3px) / 3);
   display: flex;
   flex-direction: column;
@@ -56,18 +61,19 @@
   align-items: center;
   padding: 20px;
   background-color: rgb(222, 225, 225);
-}
+  :nth-of-type(-n + 2) {
+    border-right: 3px solid rgb(197, 197, 197);
+  }
+`;
 
-.item:nth-child(-n + 2) {
-  border-right: 3px solid rgb(197, 197, 197);
-}
-.label {
+export const ProfileStatsLabel = styled.span`
   font-size: 28px;
   color: rgb(99, 105, 105);
   font-weight: 500;
-}
-.quantity {
+`;
+
+export const ProfileStatsQuantity = styled.span`
   font-size: 32px;
   color: rgb(43, 44, 44);
   font-weight: 500;
-}
+`;
