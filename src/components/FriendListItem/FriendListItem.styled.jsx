@@ -16,6 +16,7 @@ export const FriendsListItemStatus = styled.span`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  background-color: ${({ status }) => (status ? 'green' : 'red')};
 `;
 
 export const FriendsListItemAvatar = styled.img`
@@ -27,4 +28,3 @@ export const FriendsListItemAvatar = styled.img`
 `;
 
 export const FriendsListItemName = styled.p``;
-

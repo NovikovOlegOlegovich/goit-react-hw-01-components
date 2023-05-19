@@ -11,7 +11,7 @@ export default function FriendListItem({ friend }) {
   return (
     <FriendsListItem>
       <FriendsListItemStatus
-        style={{ backgroundColor: isOnline ? 'green' : 'red' }}
+        status={isOnline}
       ></FriendsListItemStatus>
       <FriendsListItemAvatar src={avatar} alt="User avatar" width="48" />
       <FriendsListItemName>{name}</FriendsListItemName>
